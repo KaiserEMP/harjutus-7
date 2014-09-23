@@ -5,6 +5,17 @@
 	<title>
 	harjtus-7s - 
 	</title>
+	<style type="text/css">
+	.tabel {
+	background-color: green;
+	
+	border: 2px solid cyan;
+	}
+	td{
+		border: 2px solid yellow;
+		padding: 10px
+	}
+	</style>
 </head>
 
 <body>
@@ -83,6 +94,52 @@
     }
 ?>
 
+<h2>For LOop</h2>
+
+	
+<?php
+    for ($count = 1; $count <= 20; $count += 1) {
+        if  ($count  %2==0)  { echo " paaris ";}
+        	elseif ($count %2==1) {echo " paaritu ";}
+       
+    }
+?> 
+
+<h2>Foreach loop</h2>
+
+<?php
+    $name = array("ASS", "OOO", "WOLVO", "VALVE", "HL3");
+
+    foreach ($name as $name) {
+        echo "<li>$name</li>";
+    }
+?>
+<br>
+<?php
+    $name = array("ASS", "OOO", "WOLVO", "VALVE", "HL3");
+    $nr = 1;
+    foreach ($name as $name) {
+        echo $nr . " " . $name . "<br>";
+		$nr++;
+    }
+?>
+
+<br>
+<table class="tabel">
+<?php
+    $contact = array(
+        "first_name" => "kaits",
+        "phone_number" => 23432424,
+        "location" => "valga",
+        "vanus" => "vana"
+    );
+
+    foreach ($contact as $attribute => $value ) {
+    	$attribute_formatted = ucfirst(str_replace("_", " ", $attribute));
+        echo "<tr><td>{$attribute_formatted}:</td><td> {$value}<br></td></tr>";
+    }
+?>
+</table>
 
 
 
